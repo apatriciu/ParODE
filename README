@@ -1,0 +1,35 @@
+author: Alexandru Patriciu
+author email: apatriciu@gmail.com
+
+Parallel Simulator for LTI systems. Can be easily extended to LTV systems. 
+Includes SciLab and Python interfaces. The library was tested on Ubuntu 10.04
+with ATI and NVidia hardware.
+
+The library implements Runge-Kutta 4th order and multi step Adams - Bashforth - Moulton 
+methods.
+
+The parallelization approach uses a scan along time and parallel matrix vector 
+multiplications.
+
+In order to build the library project you need cmake.
+
+Build dependency
+C++ boost library - the user has to have C++ boost library installed in order to 
+compile the library. The user has to provide the path to the boost library in 
+the cmakelists.txt file.
+OpenCL - the system has to have an OpenCL library system installed as well as 
+an available GPU. The library detects only the OpenCL platforms that have GPUs.
+
+Python interface
+The python extension has to be compiled from source. Go to folder 
+/Cpp/PythonInterface. Edit and update the folders in ParODESetup.py to
+match your system.
+
+>>>python ParODESetup.py build
+
+This will build a shared library ParODE.so in the folder ./build/linux... etc.
+You may then install or copy the shared library in your working folder.
+
+Scilab Interface
+See the user manual.
+
